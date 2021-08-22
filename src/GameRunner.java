@@ -23,10 +23,8 @@ public class GameRunner extends JPanel implements KeyListener, ActionListener{
 	
 	private Timer timer;          
 	private int delay = 100;
-
-	private int games = 0;
-	private int check = 0;
 	
+	//generates the objects needed for the game
 	public GameRunner() {
 
 		
@@ -45,11 +43,12 @@ public class GameRunner extends JPanel implements KeyListener, ActionListener{
 	}
 	
 	
-	
+	// decides what actions occur whenever there is a change to the objects
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		timer.start();
 		
+		// conditions on which a winner is determined
 		if( (one.sum1 >= 21 && one.sum2 >= 21) || ((dealer.sum1 >= 21 && dealer.sum2 >= 21)))
 			done = true;
 		else if(one.sum1 == 21 || one.sum2 == 21 || dealer.sum1 >= 21 || dealer.sum2 >= 21)
@@ -59,11 +58,11 @@ public class GameRunner extends JPanel implements KeyListener, ActionListener{
 		repaint();
 	}
 
-	@Override
+	//empty
 	public void keyTyped(KeyEvent e) {
 	}
 
-	@Override
+	// decides what actions occur when a button is pressed
 	public void keyReleased(KeyEvent e) {
 		// Press hit
 		if (e.getKeyCode() == KeyEvent.VK_1 && done == false) {
@@ -104,12 +103,13 @@ public class GameRunner extends JPanel implements KeyListener, ActionListener{
 		
 	}
 
-	@Override
+	//empty
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 	
+	// decides how a winner is determined
 	private void determineWinner(Graphics g) {
 		if(one.sum2 <= 21) {
 			if (one.sum2 == 21 && one.totalCards == 2)
@@ -160,6 +160,7 @@ public class GameRunner extends JPanel implements KeyListener, ActionListener{
 		}
 	}
 
+	//updates the images on the screen 
 	public void paint(Graphics g) {
 		
 		
