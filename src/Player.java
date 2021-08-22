@@ -14,6 +14,7 @@ public class Player {
 		
 	}
 	
+	// shows each card that is in a player's hand
 	public void drawHand(Graphics2D g, int locX, int locY) {
 		
 		for(int i = 0; i < 5; i++) {
@@ -29,6 +30,7 @@ public class Player {
 		}
 	}
 	
+	// draws the image on each card in a players hand
 	public void displayHand(Graphics2D g, Card card, int x, int y) {
 		
 		if(card.symbol.equals("spade") || card.symbol.equals("clover") )
@@ -95,6 +97,7 @@ public class Player {
 		summer();
 	}
 	
+	// calculates the score of each player's hand
 	private void summer() {
 		int i = 0;
 		sum1 = 0; sum2 = 0;
