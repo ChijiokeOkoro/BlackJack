@@ -8,10 +8,11 @@ public class Card {
 	public String name;
 	public int draw = 0;
 	
+	// initializer 
 	public Card(int value, int symbol) {
 		this.value = value + 1;
 		
-		
+		// sets the symbol for a card
 		switch(symbol + 1) {
 			case 1: this.symbol = "spade";
 			break;
@@ -23,6 +24,7 @@ public class Card {
 			break;
 		}
 		
+		//sets the value for each card
 		switch(this.value) {
 			case 1: name = "ace";
 			break;
@@ -56,7 +58,4 @@ public class Card {
 		}
 	} 
 	
-	public String toString() {
-		return "Card name: " + this.name + " of " + this.symbol + "     Value: " + this.value;
-	}
 }
